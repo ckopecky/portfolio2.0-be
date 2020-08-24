@@ -25,8 +25,8 @@ const getArticleId = (req, res) => {
 }
 
 const postArticles = (req, res) => {
-    const { link, name, picture, language, priority } = req.body;
-    Articles.create({link, name, picture, language, priority})
+    const { link, title, picture, language, priority } = req.body;
+    Articles.create({link, title, picture, language, priority})
         .then(response => {
             res.status(201).json(response);
         })
@@ -37,8 +37,8 @@ const postArticles = (req, res) => {
 
 const updateArticles = (req, res) => {
     const { id } = req.params;
-    const { link, name, picture, language, priority } = req.body;
-    Articles.findByIdAndUpdate(id, { link, name, picture, language, priority })
+    const { link, title, picture, language, priority } = req.body;
+    Articles.findByIdAndUpdate(id, { link, title, picture, language, priority })
         .then(response => {
             res.status(200).json(response)
         });

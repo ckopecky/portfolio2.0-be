@@ -7,7 +7,7 @@ const definition =
             type: String,
             require: true
         },
-        name: {
+        title: {
             type: String,
             require: true
         },
@@ -20,6 +20,15 @@ const definition =
         },
         priority: { //this will determine what to show on portfolio page
             type: Boolean,
+            require: false,
+            default: false
+        },
+        site: {
+            type: String,
+            require: true
+        },
+        description: {
+            type: String,
             require: false
         }
     }, {
