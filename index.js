@@ -1,4 +1,5 @@
 require('dotenv').config();
+const http = require('http');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -27,8 +28,7 @@ const corsOptions = {
 }
 
 server.use(express.json());
-server.use(cors(corsOptions
-	))
+server.use(cors(corsOptions))
 server.use('/articles', articleController);
 server.get('/', (req, res) => {
     res.status(200).json({Message: 'sanity check...'})
@@ -36,3 +36,7 @@ server.get('/', (req, res) => {
 server.listen(port, () => {
 	console.log(`server is listening on port ${port}`);
 });
+//keeps server awake
+setInterval(() => {
+  http.get(`http://${process.env.HOSTED_SITE}`);
+}, (1000 * 60 * 15));

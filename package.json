@@ -10,8 +10,8 @@
     "mongoose": "^5.9.24"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js --trace-warnings",
+    "dev": "nodemon index.js --trace-warnings"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
