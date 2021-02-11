@@ -24,7 +24,8 @@ mongoose
 	});
 
 const corsOptions = {
-	origin: ["http://localhost:3000", "https://www.christinakopecky.com", "https://christina-kopecky.christina.vercel.app", "https://christina-kopecky.christina.vercel.app", "https://christina-kopecky.vercel.app", "http://www.christinakopecky.com", "https://christina-kopecky-q6ztephjk.vercel.app"]
+	origin: ["http://localhost:3000", "https://www.christinakopecky.com", "https://christina-kopecky.christina.vercel.app", "https://christina-kopecky.christina.vercel.app", "https://christina-kopecky.vercel.app", "http://www.christinakopecky.com", "https://christina-kopecky-q6ztephjk.vercel.app"],
+	headers: {"Access-Control-Allow-Origin": "*"}
 }
 
 server.use(express.json());
